@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
       {/* Executive Metrics */}
       <Section background="secondary" padding="xl">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,14 +78,14 @@ const HomePage: React.FC = () => {
             Driving Excellence
             <span className="block text-gold">Across the Kingdom</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Our numbers tell the story of sustained growth, unwavering commitment, 
+            Our numbers tell the story of sustained growth, unwavering commitment,
             and the trust placed in us by partners across diverse industries.
           </motion.p>
         </div>
@@ -111,7 +111,7 @@ const HomePage: React.FC = () => {
       {/* Partners Marquee */}
       <Section background="default" padding="lg">
         <div className="text-center mb-12">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-3xl lg:text-4xl text-ivory mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ const HomePage: React.FC = () => {
           >
             Trusted by Industry Leaders
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-lg text-steel max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,9 +131,10 @@ const HomePage: React.FC = () => {
           </motion.p>
         </div>
 
-        <LogoMarquee 
+        <LogoMarquee
           logos={featuredPartners}
           speed="medium"
+          direction="left"
           pauseOnHover={true}
         />
       </Section>
@@ -141,7 +142,7 @@ const HomePage: React.FC = () => {
       {/* Divisions Snapshot */}
       <Section background="secondary" padding="xl">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -151,14 +152,14 @@ const HomePage: React.FC = () => {
             Business Divisions
             <span className="block text-gold">Serving Every Sector</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            From catering and facility management to construction and industrial services, 
+            From catering and facility management to construction and industrial services,
             our diverse portfolio delivers excellence across multiple industries.
           </motion.p>
         </div>
@@ -183,7 +184,7 @@ const HomePage: React.FC = () => {
         <div className="text-center">
           <motion.a
             href="/divisions"
-            className="inline-flex items-center space-x-2 bg-gold hover:bg-gold-hover text-ink px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center space-x-2 bg-gold hover:bg-gold-hover text-ink px-8 py-4 rounded-lg font-semibold transition-all duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -198,7 +199,7 @@ const HomePage: React.FC = () => {
       {/* Global Presence */}
       <Section background="default" padding="xl">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -208,14 +209,14 @@ const HomePage: React.FC = () => {
             Regional Presence
             <span className="block text-gold">Across the GCC</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            From our headquarters in Riyadh to strategic locations across the Gulf, 
+            From our headquarters in Riyadh to strategic locations across the Gulf,
             we're positioned to serve clients throughout the region.
           </motion.p>
         </div>
@@ -255,7 +256,7 @@ const HomePage: React.FC = () => {
       {/* Latest News */}
       <Section background="secondary" padding="xl">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

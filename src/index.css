@@ -32,13 +32,20 @@ body {
   font-feature-settings: 'cv11', 'ss01';
   font-variation-settings: 'opsz' 32;
   line-height: 1.5;
-  color: #1F2937;              /* was #F5F1E8 */
-  background-color: #FFFFFF;   /* was #0D0D0D */
+  color: #1F2937;
+  /* was #F5F1E8 */
+  background-color: #FFFFFF;
+  /* was #0D0D0D */
   overflow-x: hidden;
 }
 
 /* Typography Enhancement */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -82,7 +89,12 @@ p {
 }
 
 /* Enhanced Interactive Elements */
-button, a, input, textarea, select, [role="button"] {
+button,
+a,
+input,
+textarea,
+select,
+[role="button"] {
   transition: all var(--duration-base) var(--ease-luxury);
 }
 
@@ -119,6 +131,7 @@ select:focus-visible,
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -127,7 +140,7 @@ select:focus-visible,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
@@ -138,7 +151,7 @@ select:focus-visible,
   :root {
     --color-gold: #FFD700;
   }
-  
+
   body {
     color: #FFFFFF;
     background-color: #000000;
@@ -146,46 +159,54 @@ select:focus-visible,
 }
 
 /* Selection (better on light) */
-::selection, ::-moz-selection {
+::selection,
+::-moz-selection {
   background-color: rgba(201, 162, 39, 0.25);
-  color: #0F172A;                                        /* dark text */
+  color: #0F172A;
+  /* dark text */
 }
 
 /* Custom Utility Classes */
 @layer utilities {
+
   /* Reveal Animation Class */
   .reveal {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.6s var(--ease-luxury), transform 0.6s var(--ease-luxury);
   }
-  
+
   .reveal.revealed {
     opacity: 1;
     transform: translateY(0);
   }
-  
-/* Glass Effect */
-.glass {
-  background: rgba(255, 255, 255, 0.8);                  /* was rgba(20,20,20,0.8) */
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.08);                 /* was rgba(255,255,255,0.08) */
-}
 
-/* Luxury Card */
-.luxury-card {
-  background: #FFFFFF;                                   /* was #141414 */
-  border: 1px solid rgba(0, 0, 0, 0.08);                 /* was rgba(255,255,255,0.08) */
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-.luxury-card:hover {
-  transform: translateY(-6px) rotateX(2deg) rotateY(1deg);
-  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35),     /* toned for light */
-              0 8px 16px -4px rgba(0, 0, 0, 0.08);
-}
-  
+  /* Glass Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    /* was rgba(20,20,20,0.8) */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* was rgba(255,255,255,0.08) */
+  }
+
+  /* Luxury Card */
+  .luxury-card {
+    background: #FFFFFF;
+    /* was #141414 */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* was rgba(255,255,255,0.08) */
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .luxury-card:hover {
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35),
+      /* toned for light */
+      0 8px 16px -4px rgba(0, 0, 0, 0.08);
+  }
+
   /* Text Gradients */
   .text-gradient-gold {
     background: linear-gradient(135deg, #C9A227 0%, #E6C547 50%, #C9A227 100%);
@@ -193,7 +214,7 @@ select:focus-visible,
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   /* Container Utilities */
   .container-luxury {
     max-width: 1200px;
@@ -202,7 +223,7 @@ select:focus-visible,
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  
+
   @media (min-width: 1024px) {
     .container-luxury {
       max-width: 1320px;
@@ -230,8 +251,13 @@ select:focus-visible,
 }
 
 @keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 /* Print Styles */
@@ -241,18 +267,24 @@ select:focus-visible,
     color: black !important;
     box-shadow: none !important;
   }
-  
+
   body {
     font-size: 12pt;
     line-height: 1.5;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     break-after: avoid;
     page-break-after: avoid;
   }
-  
-  p, li {
+
+  p,
+  li {
     orphans: 3;
     widows: 3;
   }

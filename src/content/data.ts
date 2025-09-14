@@ -245,56 +245,56 @@ export const siteData = {
     {
       id: 'aramco',
       name: 'Saudi Aramco',
-      logo: '/media/logos/aramco.svg',
+      logo: 'https://logos-world.net/wp-content/uploads/2021/02/Aramco-Logo.png',
       category: 'energy' as const,
       featured: true
     },
     {
       id: 'pif',
       name: 'Public Investment Fund',
-      logo: '/media/logos/pif.svg',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Public_Investment_Fund_logo.svg/1200px-Public_Investment_Fund_logo.svg.png',
       category: 'government' as const,
       featured: true
     },
     {
       id: 'sabic',
       name: 'SABIC',
-      logo: '/media/logos/sabic.svg',
+      logo: 'https://logos-world.net/wp-content/uploads/2020/11/SABIC-Logo.png',
       category: 'industrial' as const,
       featured: true
     },
     {
       id: 'neom',
       name: 'NEOM',
-      logo: '/media/logos/neom.svg',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Neom_logo.svg/1200px-Neom_logo.svg.png',
       category: 'government' as const,
       featured: true
     },
     {
       id: 'maaden',
       name: 'Ma\'aden',
-      logo: '/media/logos/maaden.svg',
+      logo: 'https://logos-world.net/wp-content/uploads/2021/11/Maaden-Logo.png',
       category: 'industrial' as const,
       featured: true
     },
     {
       id: 'snb',
       name: 'Saudi National Bank',
-      logo: '/media/logos/snb.svg',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Saudi_National_Bank_logo.svg/1200px-Saudi_National_Bank_logo.svg.png',
       category: 'financial' as const,
       featured: false
     },
     {
       id: 'sami',
       name: 'SAMI',
-      logo: '/media/logos/sami.svg',
+      logo: 'https://logos-world.net/wp-content/uploads/2021/11/SAMI-Logo.png',
       category: 'industrial' as const,
       featured: false
     },
     {
       id: 'kacst',
       name: 'KACST',
-      logo: '/media/logos/kacst.svg',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/KACST_Logo.png/1200px-KACST_Logo.png',
       category: 'government' as const,
       featured: false
     }

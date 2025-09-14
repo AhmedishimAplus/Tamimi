@@ -42,13 +42,13 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
       {/* Gradient Masks */}
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-ink to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-ink to-transparent z-10 pointer-events-none" />
-      
+
       {/* Marquee Container */}
       <motion.div
         ref={marqueeRef}
         className="flex items-center space-x-12 py-8"
         animate={{
-          x: direction === 'left' ? [0, -50 + '%'] : [0, 50 + '%']
+          x: direction === 'left' ? [0, '-50%'] : [0, '50%']
         }}
         transition={{
           x: {
@@ -71,9 +71,22 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="w-32 h-20 bg-surface-secondary rounded-xl border border-line flex items-center justify-center p-4 group-hover:border-gold/30 group-hover:bg-surface-elevated transition-all duration-300">
-              {/* Logo placeholder - in production, use actual logos */}
-              <div className="text-ivory/60 group-hover:text-gold transition-colors duration-300 text-center">
+            <div className="w-32 h-20 bg-white rounded-xl border border-line flex items-center justify-center p-4 group-hover:border-gold/30 group-hover:bg-surface-elevated transition-all duration-300">
+              <img
+                src={logo.logo}
+                alt={logo.name}
+                className="max-w-full max-h-full object-contain"
+                onError={(e) => {
+                  // Fallback to text if image fails to load
+                  const img = e.currentTarget;
+                  const fallbackDiv = img.nextElementSibling as HTMLElement;
+                  img.style.display = 'none';
+                  if (fallbackDiv) {
+                    fallbackDiv.style.display = 'block';
+                  }
+                }}
+              />
+              <div className="text-ivory/60 group-hover:text-gold transition-colors duration-300 text-center hidden">
                 <div className="font-semibold text-sm leading-tight">
                   {logo.name.split(' ').map((word, i) => (
                     <div key={i}>{word}</div>

@@ -48,23 +48,15 @@ const Card: React.FC<CardProps> = ({
   };
 
   const Component = href ? motion.a : motion.div;
-  const componentProps = href 
+  const componentProps = href
     ? { href, className: 'block' }
-    : onClick 
-    ? { onClick, className: 'cursor-pointer' }
-    : {};
+    : onClick
+      ? { onClick, className: 'cursor-pointer' }
+      : {};
 
   return (
     <Component
       className={`${variantClasses[variant]} ${sizeClasses[size]} rounded-2xl transition-all duration-300 group relative ${className}`}
-      whileHover={{ 
-        y: -8,
-        scale: 1.02,
-        rotateX: 2,
-        rotateY: 1,
-        boxShadow: '0 32px 64px -12px rgba(0, 0, 0, 0.4), 0 8px 16px -4px rgba(0, 0, 0, 0.1)',
-        transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
-      }}
       whileTap={{ scale: 0.98 }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -82,8 +74,8 @@ const Card: React.FC<CardProps> = ({
       {/* Image */}
       {image && (
         <div className="mb-6 -mx-6 -mt-6 aspect-video overflow-hidden rounded-t-2xl">
-          <img 
-            src={image} 
+          <img
+            src={image}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
@@ -104,7 +96,7 @@ const Card: React.FC<CardProps> = ({
         <h3 className="font-heading font-bold text-ivory text-xl lg:text-2xl mb-4 group-hover:text-gold transition-colors duration-300">
           {title}
         </h3>
-        
+
         <p className="text-steel leading-relaxed mb-6 text-base lg:text-lg">
           {description}
         </p>
@@ -125,7 +117,7 @@ const Card: React.FC<CardProps> = ({
 
         {/* Hover Arrow */}
         {(href || onClick) && (
-          <motion.div 
+          <motion.div
             className="flex items-center text-gold mt-4 pt-4 border-t border-line/50"
             initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -134,9 +126,9 @@ const Card: React.FC<CardProps> = ({
             <span className="text-sm font-medium mr-2 group-hover:mr-3 transition-all duration-300">
               Learn more
             </span>
-            <ArrowRight 
-              size={16} 
-              className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300" 
+            <ArrowRight
+              size={16}
+              className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300"
             />
           </motion.div>
         )}
