@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
 import { Building2, Users, Calendar, ArrowRight, Play } from 'lucide-react';
@@ -16,6 +16,17 @@ import Section from '../components/ui/Section';
 const HomePage: React.FC = () => {
   // Apply SEO for home page
   useSEO('home');
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Small delay to ensure animations work on initial load
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Get featured data
   const homeStats = siteData.stats.slice(0, 3); // Companies, Employees, Years
@@ -36,7 +47,7 @@ const HomePage: React.FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: isLoaded ? 1 : 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
@@ -72,7 +83,7 @@ const HomePage: React.FC = () => {
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             Driving Excellence
@@ -82,7 +93,7 @@ const HomePage: React.FC = () => {
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             Our numbers tell the story of sustained growth, unwavering commitment,
@@ -91,7 +102,7 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {homeStats.map((stat, index) => {
+          {homeStats.map((stat) => {
             const IconComponent = stat.icon === 'Building2' ? Building2 : stat.icon === 'Users' ? Users : Calendar;
             return (
               <StatCounter
@@ -115,7 +126,7 @@ const HomePage: React.FC = () => {
             className="font-heading font-bold text-3xl lg:text-4xl text-ivory mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             Trusted by Industry Leaders
@@ -124,7 +135,7 @@ const HomePage: React.FC = () => {
             className="text-lg text-steel max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             Partnering with the Kingdom's most prestigious organizations and global enterprises
@@ -146,7 +157,7 @@ const HomePage: React.FC = () => {
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             Business Divisions
@@ -156,7 +167,7 @@ const HomePage: React.FC = () => {
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             From catering and facility management to construction and industrial services,
@@ -187,7 +198,7 @@ const HomePage: React.FC = () => {
             className="inline-flex items-center space-x-2 bg-gold hover:bg-gold-hover text-ink px-8 py-4 rounded-lg font-semibold transition-all duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             <span>View All Divisions</span>
@@ -203,7 +214,7 @@ const HomePage: React.FC = () => {
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             Regional Presence
@@ -213,7 +224,7 @@ const HomePage: React.FC = () => {
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             From our headquarters in Riyadh to strategic locations across the Gulf,
@@ -260,7 +271,7 @@ const HomePage: React.FC = () => {
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             Latest News
@@ -293,7 +304,7 @@ const HomePage: React.FC = () => {
             className="inline-flex items-center space-x-2 bg-gold hover:bg-gold-hover text-ink px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             <span>View All News</span>

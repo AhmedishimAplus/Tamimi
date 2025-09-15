@@ -24,7 +24,29 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   className = ''
 }) => {
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const marqueeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (marqueeRef.current) {
+      observer.observe(marqueeRef.current);
+    }
+
+    return () => {
+      if (marqueeRef.current) {
+        observer.unobserve(marqueeRef.current);
+      }
+    };
+  }, []);
 
   const speedConfig = {
     slow: 60,
@@ -47,10 +69,13 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
       <motion.div
         ref={marqueeRef}
         className="flex items-center space-x-12 py-8"
+        initial={{ opacity: 0 }}
         animate={{
-          x: direction === 'left' ? [0, '-50%'] : [0, '50%']
+          opacity: isVisible ? 1 : 0,
+          x: isVisible ? (direction === 'left' ? [0, '-50%'] : [0, '50%']) : 0
         }}
         transition={{
+          opacity: { duration: 0.6 },
           x: {
             repeat: Infinity,
             repeatType: 'loop',

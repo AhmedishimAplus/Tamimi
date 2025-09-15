@@ -199,12 +199,23 @@ select:focus-visible,
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform-style: preserve-3d;
+    position: relative;
   }
 
   .luxury-card:hover {
     box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35),
       /* toned for light */
       0 8px 16px -4px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Badge positioning fix for animations */
+  .luxury-card .badge-fixed {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transform: translate3d(0, 0, 1px);
+    z-index: 20;
   }
 
   /* Text Gradients */

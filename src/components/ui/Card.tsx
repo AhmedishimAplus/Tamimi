@@ -56,19 +56,26 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <Component
-      className={`${variantClasses[variant]} ${sizeClasses[size]} rounded-2xl transition-all duration-300 group relative ${className}`}
+      className={`${variantClasses[variant]} ${sizeClasses[size]} rounded-2xl transition-all duration-300 group relative overflow-hidden ${className}`}
       whileTap={{ scale: 0.98 }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: false, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      style={{ transformOrigin: 'center center' }}
       {...componentProps}
     >
       {/* Badge */}
       {badge && (
-        <div className="absolute top-4 right-4 bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-medium">
+        <motion.div
+          className="badge-fixed bg-gold/20 text-gold px-1.5 py-0.5 rounded-full text-xs font-medium text-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.4, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        >
           {badge}
-        </div>
+        </motion.div>
       )}
 
       {/* Image */}

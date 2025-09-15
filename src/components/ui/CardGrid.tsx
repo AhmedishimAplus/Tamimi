@@ -59,7 +59,7 @@ const CardGrid: React.FC<CardGridProps> = ({
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: false, margin: "-100px" }}
     >
       {React.Children.map(children, (child, index) => (
         <motion.div
