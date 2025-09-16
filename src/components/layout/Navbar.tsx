@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        isScrolled || isMenuOpen
           ? 'glass backdrop-blur-xl border-b border-line shadow-lg text-text-primary' 
           : 'bg-transparent text-text-inverse'
       }`}
@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
                       className={`flex items-center space-x-1 font-medium transition-all duration-300 ${
                         isActiveLink(item.href) 
                           ? 'text-gold' 
-                          : (isScrolled ? 'text-text-primary hover:text-ivory' : 'text-white/90 hover:text-white')
+                          : (isScrolled || isMenuOpen ? 'text-text-primary hover:text-ivory' : 'text-white/90 hover:text-white')
                       }`}
                       onMouseEnter={() => setIsDivisionsOpen(true)}
                       onMouseLeave={() => setIsDivisionsOpen(false)}
@@ -135,7 +135,7 @@ const Navbar: React.FC = () => {
                     className={`relative font-medium transition-all duration-300 ${
                       isActiveLink(item.href) 
                         ? 'text-gold' 
-                        : (isScrolled ? 'text-text-primary hover:text-ivory' : 'text-white/90 hover:text-white')
+                        : (isScrolled || isMenuOpen ? 'text-text-primary hover:text-ivory' : 'text-white/90 hover:text-white')
                     }`}
                   >
                     {item.name}
