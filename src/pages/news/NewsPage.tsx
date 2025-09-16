@@ -66,7 +66,7 @@ const NewsPage: React.FC = () => {
       {/* Featured News Carousel */}
       <Section background="secondary" padding="xl">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,8 +94,16 @@ const NewsPage: React.FC = () => {
               image={article.image}
               href={`/news/${article.id}`}
               variant="image"
-              badge={article.tag}
               className="mx-4"
+              showModal={true}
+              truncateTitle={true}
+              truncateDescription={true}
+              titleLimit={65}
+              descriptionLimit={110}
+              author={article.author}
+              date={article.date}
+              category={article.category}
+              readTime={article.readTime?.toString()}
             >
               <div className="flex items-center justify-between text-sm text-steel mt-4 pt-4 border-t border-line">
                 <span>{article.author}</span>
@@ -112,7 +120,7 @@ const NewsPage: React.FC = () => {
       {/* News Grid with Filters */}
       <Section background="default" padding="xl" id="news-grid">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +192,15 @@ const NewsPage: React.FC = () => {
                   image={article.image}
                   href={`/news/${article.id}`}
                   variant="image"
-                  badge={article.tag}
+                  showModal={true}
+                  truncateTitle={true}
+                  truncateDescription={true}
+                  titleLimit={70}
+                  descriptionLimit={120}
+                  author={article.author}
+                  date={article.date}
+                  category={article.category}
+                  readTime={article.readTime?.toString()}
                 >
                   <div className="flex items-center justify-between text-sm text-steel mt-4 pt-4 border-t border-line">
                     <span>{article.author}</span>
@@ -220,7 +236,7 @@ const NewsPage: React.FC = () => {
       {/* Investor Relations Section */}
       <Section background="secondary" padding="xl">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -230,14 +246,14 @@ const NewsPage: React.FC = () => {
             Investor Relations
             <span className="block text-gold">Financial Transparency</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Access our financial reports, investor presentations, and key performance 
+            Access our financial reports, investor presentations, and key performance
             metrics. We're committed to transparent communication with our stakeholders.
           </motion.p>
         </div>

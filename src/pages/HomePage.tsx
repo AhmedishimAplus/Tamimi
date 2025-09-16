@@ -184,6 +184,7 @@ const HomePage: React.FC = () => {
               href={`/divisions/${division.slug}`}
               variant="luxury"
               badge={`Est. ${division.established}`}
+              badgeType="establishment"
               stats={[
                 { label: 'Services', value: division.services.length.toString() },
                 { label: 'Clients', value: division.clients.length.toString() }
@@ -288,7 +289,15 @@ const HomePage: React.FC = () => {
               image={article.image}
               href={`/news/${article.id}`}
               variant="image"
-              badge={article.tag}
+              showModal={true}
+              truncateTitle={true}
+              truncateDescription={true}
+              titleLimit={70}
+              descriptionLimit={120}
+              author={article.author}
+              date={article.date}
+              category={article.category}
+              readTime={article.readTime?.toString()}
             >
               <div className="flex items-center justify-between text-sm text-steel mt-4 pt-4 border-t border-line">
                 <span>{article.author}</span>
