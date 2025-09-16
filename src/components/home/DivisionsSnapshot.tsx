@@ -72,7 +72,7 @@ const DivisionsSnapshot: React.FC = () => {
   return (
     <Section background="secondary" padding="xl" id="divisions">
       <div className="text-center mb-16">
-        <motion.h2 
+        <motion.h2
           className="font-heading font-bold text-4xl lg:text-5xl text-ivory mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,14 +82,14 @@ const DivisionsSnapshot: React.FC = () => {
           Business Divisions
           <span className="block text-gold">Serving Every Sector</span>
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="text-xl text-steel max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          From catering and facility management to construction and industrial services, 
+          From catering and facility management to construction and industrial services,
           our diverse portfolio delivers excellence across multiple industries.
         </motion.p>
       </div>
@@ -122,9 +122,9 @@ const DivisionsSnapshot: React.FC = () => {
                   <span className="text-gold font-semibold text-sm">
                     {division.stats}
                   </span>
-                  <ArrowRight 
-                    size={16} 
-                    className="text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300" 
+                  <ArrowRight
+                    size={16}
+                    className="text-gold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-1 transition-all duration-300"
                   />
                 </div>
               </div>
@@ -134,7 +134,7 @@ const DivisionsSnapshot: React.FC = () => {
       </motion.div>
 
       {/* CTA Section */}
-      <motion.div 
+      <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -146,10 +146,10 @@ const DivisionsSnapshot: React.FC = () => {
             Discover Our Complete Portfolio
           </h3>
           <p className="text-lg text-steel mb-8 max-w-2xl mx-auto">
-            Explore all our business divisions and discover how we're driving 
+            Explore all our business divisions and discover how we're driving
             innovation across diverse sectors throughout the Kingdom.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               variant="primary"
@@ -159,7 +159,7 @@ const DivisionsSnapshot: React.FC = () => {
             >
               View All Divisions
             </Button>
-            
+
             <Button
               variant="outline"
               size="lg"
