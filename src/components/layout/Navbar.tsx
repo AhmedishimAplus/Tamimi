@@ -29,8 +29,8 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { 
-      name: 'Business Divisions', 
+    {
+      name: 'Business Divisions',
       href: '/divisions',
       hasDropdown: true,
       dropdownItems: [
@@ -59,11 +59,10 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMenuOpen
-          ? 'glass backdrop-blur-xl border-b border-line shadow-lg text-text-primary' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMenuOpen
+          ? 'glass backdrop-blur-xl border-b border-line shadow-lg text-text-primary'
           : 'bg-transparent text-text-inverse'
-      }`}
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -86,25 +85,23 @@ const Navbar: React.FC = () => {
                 {item.hasDropdown ? (
                   <>
                     <button
-                      className={`flex items-center space-x-1 font-medium transition-all duration-300 ${
-                        isActiveLink(item.href) 
-                          ? 'text-gold' 
+                      className={`flex items-center space-x-1 font-medium transition-all duration-300 ${isActiveLink(item.href)
+                          ? 'text-gold'
                           : (isScrolled || isMenuOpen ? 'text-text-primary hover:text-ivory' : 'text-white/90 hover:text-white')
-                      }`}
+                        }`}
                       onMouseEnter={() => setIsDivisionsOpen(true)}
                       onMouseLeave={() => setIsDivisionsOpen(false)}
                       aria-expanded={isDivisionsOpen}
                       aria-haspopup="true"
                     >
                       <span>{item.name}</span>
-                      <ChevronDown 
-                        size={16} 
-                        className={`transition-transform duration-200 ${
-                          isDivisionsOpen ? 'rotate-180' : ''
-                        }`}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${isDivisionsOpen ? 'rotate-180' : ''
+                          }`}
                       />
                     </button>
-                    
+
                     <AnimatePresence>
                       {isDivisionsOpen && (
                         <motion.div
@@ -132,11 +129,10 @@ const Navbar: React.FC = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`relative font-medium transition-all duration-300 ${
-                      isActiveLink(item.href) 
-                        ? 'text-gold' 
+                    className={`relative font-medium transition-all duration-300 ${isActiveLink(item.href)
+                        ? 'text-gold'
                         : (isScrolled || isMenuOpen ? 'text-text-primary hover:text-ivory' : 'text-white/90 hover:text-white')
-                    }`}
+                      }`}
                   >
                     {item.name}
                     {isActiveLink(item.href) && (
@@ -189,14 +185,13 @@ const Navbar: React.FC = () => {
                           aria-expanded={isDivisionsOpen}
                         >
                           <span className="font-medium">{item.name}</span>
-                          <ChevronDown 
-                            size={16} 
-                            className={`transition-transform duration-200 ${
-                              isDivisionsOpen ? 'rotate-180' : ''
-                            }`}
+                          <ChevronDown
+                            size={16}
+                            className={`transition-transform duration-200 ${isDivisionsOpen ? 'rotate-180' : ''
+                              }`}
                           />
                         </button>
-                        
+
                         <AnimatePresence>
                           {isDivisionsOpen && (
                             <motion.div
@@ -223,11 +218,10 @@ const Navbar: React.FC = () => {
                     ) : (
                       <Link
                         to={item.href}
-                        className={`block px-6 py-3 font-medium transition-colors duration-200 ${
-                          isActiveLink(item.href) 
-                            ? 'text-gold bg-surface-secondary' 
+                        className={`block px-6 py-3 font-medium transition-colors duration-200 ${isActiveLink(item.href)
+                            ? 'text-gold bg-surface-secondary'
                             : 'text-ivory hover:text-gold hover:bg-surface-secondary'
-                        }`}
+                          }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.name}
