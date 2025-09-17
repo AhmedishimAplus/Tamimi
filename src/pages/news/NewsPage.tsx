@@ -175,7 +175,7 @@ const NewsPage: React.FC = () => {
         </div>
 
         {/* News Grid */}
-        <CardGrid columns={3} gap="lg" className="mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           <AnimatePresence>
             {filteredNews.map((article) => (
               <motion.div
@@ -192,9 +192,9 @@ const NewsPage: React.FC = () => {
                   image={article.image}
                   href={`/news/${article.id}`}
                   variant="image"
-                  showModal={true}
-                  truncateTitle={true}
-                  truncateDescription={true}
+                  showModal
+                  truncateTitle
+                  truncateDescription
                   titleLimit={70}
                   descriptionLimit={120}
                   author={article.author}
@@ -213,7 +213,7 @@ const NewsPage: React.FC = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-        </CardGrid>
+        </div>
 
         {filteredNews.length === 0 && (
           <motion.div
